@@ -13,7 +13,8 @@ public class CustomErrorDecoder implements ErrorDecoder {
             case HttpStatus.SC_UNAUTHORIZED: return new OpenApiResourceNotFoundException("You might want to authorize first");
             case HttpStatus.SC_INTERNAL_SERVER_ERROR: return new OpenApiResourceNotFoundException("server error????");
             case HttpStatus.SC_NOT_FOUND: return new OpenApiResourceNotFoundException("This is not the page you are looking for");
+            default:
+                return new OpenApiResourceNotFoundException("An unexpected error occurred: " + status);
         }
-        return null;
     }
 }
