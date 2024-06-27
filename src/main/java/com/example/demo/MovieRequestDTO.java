@@ -6,6 +6,7 @@ import lombok.*;
 @Setter
 @ToString
 @AllArgsConstructor
+@NoArgsConstructor
 public class MovieRequestDTO {
     private String media_type;
     private int media_id;
